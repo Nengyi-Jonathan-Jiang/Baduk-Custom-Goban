@@ -1,0 +1,214 @@
+@media (orientation: portrait) {
+    main {
+        flex-direction: column;
+    }
+    #controls {
+        padding-top: 0 !important;
+    }
+    #controls>#control-buttons {
+        width: 100%;
+    }
+    #controls>#captures-display-bottom {
+        display: none !important;
+    }
+
+    #black-captures-top {
+        border-right: 1px solid black;
+        padding-left: 20px;
+    }
+    #white-captures-top {
+        border-left: 1px solid black;
+        padding-right: 20px;
+    }
+
+    #black-captures-top, #white-captures-top {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #info {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+@media (orientation: landscape) {
+    main {
+        flex-direction: row;
+    }
+    #controls>#control-buttons {
+        width: 15em;
+    }
+    #controls {
+        border-left: 1px solid black;
+        padding-left: 20px;
+    }
+    #black-captures-top, #white-captures-top {
+        display: none !important;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Nunito, Arial, sans-serif;
+    font-size: min(14pt, min(3vw, 4vh));
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+* {
+    color: inherit;
+    font: inherit;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+}
+
+#goban {
+    position: absolute;
+}
+
+#goban-container {
+    flex-grow: 1;
+    overflow: visible;
+    position: relative;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#controls {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 10px 20px 20px;
+}
+
+#captures-bottom-line {
+    width: 1px;
+    height: 100%;
+    background-color: black;
+}
+
+#controls>* {
+    display: block;
+}
+
+#turn-display {
+    font-size: 150%;
+    display: block;
+}
+
+#move-display {
+    display: block;
+}
+
+#info {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .2em;
+}
+
+#info-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-grow: 1;
+    min-width: 12em;
+}
+
+#captures-display-bottom {
+    display: flex !important;
+    width: 100%;
+}
+
+#black-captures-top, #black-captures-bottom,
+#white-captures-top, #white-captures-bottom{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+#black-captures-top>:first-child, #black-captures-bottom>:first-child,
+#white-captures-top>:first-child, #white-captures-bottom>:first-child {
+    font-size: 150%;
+}
+
+#black-captures-top, #black-captures-bottom {
+    text-align: start;
+}
+#white-captures-top, #white-captures-bottom {
+    text-align: end;
+}
+
+
+#controls>#control-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#controls>#control-buttons>button {
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    flex-grow: 1;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition-property: color, background;
+    transition-duration: .2s;
+}
+
+#controls>#control-buttons>button:hover {
+    color: white;
+    background: black;
+}
+
+#controls button {
+    font-family: Nunito, Arial, sans-serif;
+    transition: background, color;
+    border: 1px solid black;
+    transition-duration: .2s;
+}
+
+#controls button:hover {
+    background: black;
+    color: white;
+}
+
+#pass-button {
+    margin: auto;
+}
+
+#game-code-display {
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 0.7em;
+    height: 1.4em;
+    border: 1px solid black;
+    background-color: #fff8;
+    padding-left: .2em;
+    padding-right: .2em;
+}
+
+#game-code-display:before {
+    content: attr(data-game-code);
+    font-family: "JetBrains Mono", "Courier New", monospace;
+}

@@ -33,7 +33,7 @@ class Board {
 }
 
 
-const port = 3030;
+const port = 80;
 const path = require("path");
 const express = require("express");
 const {Goban} = require('./go.server');

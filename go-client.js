@@ -263,7 +263,7 @@ socket.on('create-board', data => {
 		}
 	});
 
-	let shouldDisplayTerritory = false;
+	let shouldDisplayTerritory = true;
 
 
 	document.getElementById('undo-button').addEventListener('click', _ => socket.emit('undo'));

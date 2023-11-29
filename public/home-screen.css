@@ -1,0 +1,51 @@
+body > div.screen#home-screen > h1 {
+    display:   block;
+    font-size: 60pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+body > div.screen#home-screen > button#play-button {
+    display:       flex;
+    align-items:   center;
+    padding:       5pt 20pt;
+    border-radius: 25pt;
+    border: 3px solid black;
+}
+
+body > div.screen#home-screen > button#play-button:before {
+    content:      "";
+    display:      block;
+    width:        0;
+    height:       0;
+    border-width: 16pt 7pt 16pt 25pt;
+    border-color: transparent transparent transparent black;
+    border-style: solid;
+}
+
+body > div.screen#home-screen > button#play-button:after {
+    content:     "Play";
+    font-size:   40pt;
+    line-height: 1;
+    font-weight: bold;
+}
+
+body > div.screen#home-screen > button#play-button:hover {
+    animation-name:     button-bounce;
+    animation-duration: .5s;
+}
+
+@keyframes button-bounce {
+    0% {
+        transform: scale(1)
+    }
+    40% {
+        transform: scale(1.2)
+    }
+    80% {
+        transform: scale(0.95)
+    }
+    100% {
+        transform: scale(1)
+    }
+}

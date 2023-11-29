@@ -1,0 +1,59 @@
+div.screen#create-game-screen {
+    font-size: 20pt;
+}
+
+select#game-board-type {
+    outline: 0;
+    border: 0;
+    font-size: inherit;
+}
+
+input#komi{
+    -webkit-appearance: none;
+    appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    width: 5em;
+    transform: translateY(2px);
+}
+input#komi::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    display: block;
+    background: black;
+    width: .2em;
+    height: .8em;
+    border-radius: 0;
+    position: relative;
+    top: -.3em;
+    border: none;
+}
+input#komi::-moz-range-thumb{
+    -moz-appearance: none;
+    display: block;
+    background: black;
+    width: .2em;
+    height: .8em;
+    border-radius: 0;
+    border: none;
+    transform: translateY(.5em);
+}
+input#komi::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    background: black;
+    height: .2em;
+    border-radius: .1em;
+    position: relative;
+    bottom: .3em;
+}
+input#komi::-moz-range-track{
+    -moz-appearance: none;
+    background: white;
+    height: .2em;
+    border: none;
+    border-radius: .1em;
+    transform: translateY(.5em);
+}
+
+button#create-game {
+	text-decoration: underline;
+}

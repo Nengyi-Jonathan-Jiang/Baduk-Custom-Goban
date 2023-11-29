@@ -37,9 +37,9 @@ const port = 80;
 const path = require("path");
 const express = require("express");
 const {Goban} = require('./go.server');
-const {custom_boards} = require('./res/custom-boards.data');
+const {custom_boards} = require('./public/res/custom-boards.data');
 const app = express();
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 
 require("socket.io");
@@ -48,10 +48,10 @@ let server = require("http").createServer(app);
 /** @type {Server} */
 const io = require("socket.io")(server);
 
-app.get('/', (_req, res) => res.sendFile(path.join(__dirname, 'index.html')))
+app.get('/', (_req, res) => res.sendFile(path.join(__dirname, 'public/index.html')))
 app.get('/play', (_req, res) => {
     if(Board.openBoards.has(_req.url.match(/(?<=play\?code=)[A-Z0-9]{5}/)?.[0])) {
-        res.sendFile(path.join(__dirname, 'play.html'))
+        res.sendFile(path.join(__dirname, 'public/play.html'))
     }
     else {
         res.redirect('/');
@@ -119,8 +119,6 @@ gameSocket.on("connection", /** @param {Socket} socket */ function(socket) {
         updateAll();
     })
 })
-
-
 
 
 server.listen(port);

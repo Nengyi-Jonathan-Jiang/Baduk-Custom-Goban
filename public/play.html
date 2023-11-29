@@ -6,20 +6,20 @@
         <style>
             @font-face {
                 font-family: "Nunito";
-                src: url("res/font/Nunito.ttf");
+                src: url("/public/res/font/Nunito.ttf");
             }
             @font-face {
                 font-family: "JetBrains Mono";
-                src: url("res/font/JetBrainsMono.ttf");
+                src: url("/public/res/font/JetBrainsMono.ttf");
             }
         </style>
-        <link href="game.css" rel="stylesheet" type="text/css">
+        <link href="/public/game.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div style="display:none">
-            <img src="res/image/black.png" alt="black.png" id="black-stone-img">
-            <img src="res/image/white.png" alt="white.png" id="white-stone-img">
-            <img src="res/image/board.png" alt="board.png" id="board-img">
+            <img src="/public/res/image/black.png" alt="black.png" id="black-stone-img">
+            <img src="/public/res/image/white.png" alt="white.png" id="white-stone-img">
+            <img src="/public/res/image/board.png" alt="board.png" id="board-img">
         </div>
         <main>
             <div id="goban-container">
@@ -62,6 +62,6 @@
             </div>
         </main>
         <script src="/socket.io/socket.io.js"></script>
-        <script src="go-client.js"></script>
+        <script src="/public/go-client.js"></script>
     </body>
 </html>

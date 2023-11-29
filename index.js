@@ -39,7 +39,7 @@ const express = require("express");
 const {Goban} = require('./go.server');
 const {custom_boards} = require('./public/res/custom-boards.data');
 const app = express();
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 app.use(express.json());
 
 require("socket.io");
